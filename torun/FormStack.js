@@ -7,6 +7,7 @@ import {
   ImageBackground,
   TouchableOpacity,
   TouchableHighlight,
+  TextInput,
 } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
@@ -855,7 +856,7 @@ function TimesheetLoad() {
           file.
         </Text>
         <View style={TimesheetStyles.Group59}>
-          <Text style={TimesheetStyles.Txt5910}>{}</Text>
+          <Text style={TimesheetStyles.Txt5910}></Text>
           <TouchableOpacity onPress={pickDocument}>
             <View style={TimesheetStyles.Group397}>
               <Text style={TimesheetStyles.Txt492}>Upload</Text>
@@ -887,6 +888,15 @@ function TimesheetLoad() {
 
 function EmployersParticulars1Load() {
   const navigation = useNavigation();
+
+  const [CSN, onChangeCSN] = React.useState("");
+  const [EmployeeName, onChangeEmployeeName] = React.useState("");
+  const [EmployeeAddress, onChangeEmployeeAddress] = React.useState("");
+  const [EmployeePhone, onChangeEmployeePhone] = React.useState("");
+  const [EmployeeOccupation, onChangeEmployeeOccupation] = React.useState("");
+  const [EmployeeEmployment, onChangeEmployeeEmployment] =
+    React.useState("DD/MM/YYYY");
+
   return (
     <View style={EmployersParticulars1.EmployeeSDetails}>
       <View style={EmployersParticulars1.Group352}>
@@ -957,25 +967,47 @@ function EmployersParticulars1Load() {
           <Text style={EmployersParticulars1.Txt394}>
             CPF Submission Number (CSN)
           </Text>
-          <View style={EmployersParticulars1.Rectangle145} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={onChangeCSN}
+            value={CSN}
+          />
           <Text style={EmployersParticulars1.Txt466}>
             Employee’s Company Particulars
           </Text>
           <Text style={EmployersParticulars1.Txt894}>Name</Text>
-          <View style={EmployersParticulars1.Rectangle134} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={onChangeEmployeeName}
+            value={EmployeeName}
+          />
           <Text style={EmployersParticulars1.Txt894}>Address</Text>
-          <View style={EmployersParticulars1.Rectangle135} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={onChangeEmployeeAddress}
+            value={EmployeeAddress}
+          />
           <Text style={EmployersParticulars1.Txt396}>Phone</Text>
-          <View style={EmployersParticulars1.Rectangle132} />
+          <TextInput
+            style={styles.ShortTextInput}
+            onChangeText={onChangeEmployeePhone}
+            value={EmployeePhone}
+          />
           <Text style={EmployersParticulars1.Txt748}>Employee Particulars</Text>
           <Text style={EmployersParticulars1.Txt894}>
             Occupation/Designation
           </Text>
-          <View style={EmployersParticulars1.Rectangle133} />
+          <TextInput
+            style={styles.ShortTextInput}
+            onChangeText={onChangeEmployeeOccupation}
+            value={EmployeeOccupation}
+          />
           <Text style={EmployersParticulars1.Txt894}>Date of Employment</Text>
-          <View style={EmployersParticulars1.Group323}>
-            <Text style={EmployersParticulars1.Txt236}>DD/MM/YYYY</Text>
-          </View>
+          <TextInput
+            style={styles.ShortTextInput}
+            onChangeText={onChangeEmployeeEmployment}
+            value={EmployeeEmployment}
+          />
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployersParticulars2")}
@@ -996,6 +1028,15 @@ function EmployersParticulars1Load() {
 
 function EmployersParticulars2Load() {
   const navigation = useNavigation();
+
+  const [EmployerName, onChangeEmployerName] = React.useState("Michael Wang");
+  const [EmployerOccupation, onChangeEmployerOccupation] = React.useState("");
+  const [EmployerNRIC, onChangeEmployerNRIC] = React.useState("S1234567G");
+  const [EmployerPhone, onChangeEmployerPhone] = React.useState("96323488");
+  const [EmployerEmail, onChangeEmployerEmail] = React.useState(
+    "MichaelWang@gmail.com"
+  );
+
   return (
     <View style={EmployersParticulars2.CertifyingOfficerSDetails}>
       <View style={EmployersParticulars2.Group963}>
@@ -1056,15 +1097,27 @@ function EmployersParticulars2Load() {
         </TouchableOpacity>
         <View style={EmployersParticulars2.Group61}>
           <Text style={EmployersParticulars2.Txt536}>Name</Text>
-          <View style={EmployersParticulars2.Rectangle134} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={onChangeEmployerName}
+            value={EmployerName}
+          />
           <Text style={EmployersParticulars2.Txt178}>
             Occupation/Designation
           </Text>
-          <View style={EmployersParticulars2.Rectangle133} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={onChangeEmployerOccupation}
+            value={EmployerOccupation}
+          />
           <Text style={EmployersParticulars2.Txt178}>
             NRIC / FIN / Passport No.
           </Text>
-          <View style={EmployersParticulars2.Rectangle135} />
+          <TextInput
+            style={styles.ShortTextInput}
+            onChangeText={onChangeEmployerNRIC}
+            value={EmployerNRIC}
+          />
           <Text style={EmployersParticulars2.Txt536}>Phone</Text>
           <View style={EmployersParticulars2.Rectangle132} />
           <Text style={EmployersParticulars2.Txt536}>Email</Text>
@@ -4346,5 +4399,24 @@ const EmployersSubmissionStyle = StyleSheet.create({
     fontSize: 22,
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
+  },
+});
+
+const styles = StyleSheet.create({
+  LongTextInput: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: "white",
+  },
+
+  ShortTextInput: {
+    height: 40,
+    width: 150,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    backgroundColor: "white",
   },
 });
