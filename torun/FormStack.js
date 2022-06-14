@@ -4366,7 +4366,6 @@ const EmployersSubmissionStyle = StyleSheet.create({
 const styles = StyleSheet.create({
   LongTextInput: {
     height: 40,
-    margin: 12,
     borderWidth: 1,
     padding: 10,
     backgroundColor: "white",
@@ -4375,7 +4374,6 @@ const styles = StyleSheet.create({
   ShortTextInput: {
     height: 40,
     width: 150,
-    margin: 12,
     borderWidth: 1,
     padding: 10,
     backgroundColor: "white",
