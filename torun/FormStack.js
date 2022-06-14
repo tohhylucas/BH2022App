@@ -447,10 +447,10 @@ function EmployeesParticularsLoad() {
             </View>
             <View style={EmployeesParticularsStyle.Group471}>
               <View style={EmployeesParticularsStyle.Group175}>
-                <Text style={EmployeesParticularsStyle.Txt311}>DD/MM/YYYY</Text>
+                <TextInput style={styles.ShortTextInput} />
               </View>
               <View style={EmployeesParticularsStyle.Group6910}>
-                <Text style={EmployeesParticularsStyle.Txt311}>DD/MM/YYYY</Text>
+                <TextInput style={styles.ShortTextInput} />
               </View>
             </View>
           </View>
@@ -458,21 +458,21 @@ function EmployeesParticularsLoad() {
             Date of Employment
           </Text>
           <View style={EmployeesParticularsStyle.Group557}>
-            <Text style={EmployeesParticularsStyle.Txt311}>DD/MM/YYYY</Text>
+            <TextInput style={styles.LongTextInput} />
           </View>
           <Text style={EmployeesParticularsStyle.Txt321}>
             Occupation/Designation
           </Text>
-          <View style={EmployeesParticularsStyle.Rectangle123} />
+          <TextInput style={styles.LongTextInput} />
           <Text style={EmployeesParticularsStyle.Txt829}>
             Company Particulars
           </Text>
           <Text style={EmployeesParticularsStyle.Txt555}>Name</Text>
-          <View style={EmployeesParticularsStyle.Rectangle124} />
+          <TextInput style={styles.LongTextInput} />
           <Text style={EmployeesParticularsStyle.Txt555}>Address</Text>
-          <View style={EmployeesParticularsStyle.Rectangle125} />
+          <TextInput style={styles.LongTextInput} />
           <Text style={EmployeesParticularsStyle.Txt1004}>Phone</Text>
-          <View style={EmployeesParticularsStyle.Rectangle126} />
+          <TextInput style={styles.LongTextInput} />
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployeesConfirmation")}
@@ -1106,9 +1106,17 @@ function EmployersParticulars2Load() {
             value={EmployerNRIC}
           />
           <Text style={EmployersParticulars2.Txt536}>Phone</Text>
-          <View style={EmployersParticulars2.Rectangle132} />
+          <TextInput
+            style={styles.ShortTextInput}
+            onChangeText={onChangeEmployerPhone}
+            value={EmployerPhone}
+          />
           <Text style={EmployersParticulars2.Txt536}>Email</Text>
-          <View style={EmployersParticulars2.Rectangle145} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={onChangeEmployerEmail}
+            value={EmployerEmail}
+          />
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployersConfirmation")}
