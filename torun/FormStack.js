@@ -274,93 +274,103 @@ function ClaimsOptionsLoad() {
 
 function PaySlipLoad() {
   const navigation = useNavigation();
+  const [PaySlipName, changePaySlipName] = useState("Upload Payslip");
+  const pickPaySlip = async () => {
+    let result = await DocumentPicker.getDocumentAsync({});
+    console.log(result.uri);
+    console.log(result);
+    console.log(result.name);
+    changePaySlipName(result.name);
+  };
+
   return (
-    <View style={PayslipStyle.UploadPaySlip}>
-      <View style={PayslipStyle.Group890}>
-        <View style={PayslipStyle.Component2}>
-          <Text style={PayslipStyle.Txt489}>8:55</Text>
+    <View style={PaySlipStyle.UploadPaySlip}>
+      <View style={PaySlipStyle.Group871}>
+        <View style={PaySlipStyle.Component2}>
+          <Text style={PaySlipStyle.Txt461}>8:55</Text>
           <Image
-            style={PayslipStyle.Vector}
+            style={PaySlipStyle.Vector}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-I26%3A488%3B14%3A9?alt=media&token=4a65099e-ce86-47f3-a207-5f2e744e2946",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-I26%3A488%3B14%3A9?alt=media&token=722a8e2a-37b6-4e49-8aa7-2124fbc83921",
             }}
           />
           <Image
-            style={PayslipStyle.Vector1}
+            style={PaySlipStyle.Vector1}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-I26%3A488%3B14%3A7?alt=media&token=a17efa93-0d7e-4f67-b029-39e936bc8ca3",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-I26%3A488%3B14%3A7?alt=media&token=d65cb1f8-38ee-470d-bd9c-2b6f6ff03aa5",
             }}
           />
           <Image
-            style={PayslipStyle.Vector2}
+            style={PaySlipStyle.Vector2}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-I26%3A488%3B14%3A8?alt=media&token=3a537f92-74ae-4d31-8bc4-0a3e39ea3f8a",
-            }}
-          />
-        </View>
-        <View style={PayslipStyle.Group409}>
-          <Text style={PayslipStyle.Txt654}>Upload Payslip</Text>
-          <Image
-            style={PayslipStyle.Vector3}
-            source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A544?alt=media&token=31797444-809b-4c4e-98d2-0207fe807a2f",
-            }}
-          />
-          <Image
-            style={PayslipStyle.Vector4}
-            source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A543?alt=media&token=b51015f8-ec4b-49e2-9406-b524cd3d9451",
-            }}
-          />
-          <Image
-            style={PayslipStyle.Vector3}
-            source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A545?alt=media&token=14d28e8b-c9ac-44fc-9326-3d403f8977ec",
-            }}
-          />
-          <Image
-            style={PayslipStyle.Vector5}
-            source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A546?alt=media&token=bebf528a-f67b-485d-b022-9b9123b80eac",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-I26%3A488%3B14%3A8?alt=media&token=df731cbc-5fbf-441d-9062-548e232d3f56",
             }}
           />
         </View>
-        <TouchableOpacity
-          onPress={() => navigation.dispatch(StackActions.popToTop())}
-        >
-          <View style={PayslipStyle.Group50}>
-            <Text style={PayslipStyle.Txt736}>Delete application</Text>
-          </View>
-        </TouchableOpacity>
-        <Text style={PayslipStyle.Txt303}>
+        <View style={PaySlipStyle.Group714}>
+          <Text style={PaySlipStyle.Txt275}>Upload Payslip</Text>
+          <Image
+            style={PaySlipStyle.Vector3}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-71%3A544?alt=media&token=b3f77aa4-0978-4aba-b705-90eb76924961",
+            }}
+          />
+          <Image
+            style={PaySlipStyle.Vector4}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-71%3A543?alt=media&token=1cab0a44-8e8d-42a7-9a97-03549ef19071",
+            }}
+          />
+          <Image
+            style={PaySlipStyle.Vector3}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-71%3A545?alt=media&token=b2f466f9-1879-4ba1-ad51-5a856296ad21",
+            }}
+          />
+          <Image
+            style={PaySlipStyle.Vector5}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-71%3A546?alt=media&token=db2a83f8-cac0-407b-a5ac-4e8af60d8fe3",
+            }}
+          />
+        </View>
+        <View style={PaySlipStyle.Group50}>
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(StackActions.popToTop())}
+          >
+            <Text style={PaySlipStyle.Txt734}>Delete application</Text>
+          </TouchableOpacity>
+        </View>
+
+        <Text style={PaySlipStyle.Txt434}>
           Please upload your past 6 month’s net income as one PDF
         </Text>
-        <View style={PayslipStyle.Group663}>
-          <Text style={PayslipStyle.Txt184}>
-            Michael Wang_Compiled Pay....pdf
-          </Text>
+        <View style={PaySlipStyle.Group76}>
+          <Text style={PaySlipStyle.Txt1064}>{PaySlipName}</Text>
+          <View style={PaySlipStyle.Group312}>
+            <TouchableOpacity onPress={pickPaySlip}>
+              <Text style={PaySlipStyle.Txt5410}>Upload</Text>
+            </TouchableOpacity>
+          </View>
         </View>
         <Image
-          style={PayslipStyle.Group57}
+          style={PaySlipStyle.Group57}
           source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A672?alt=media&token=bacc1828-34f4-4486-a606-4edc15b2f431",
+            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ixe9vd7uwqg-71%3A672?alt=media&token=1607d5ed-10fd-4837-90da-f58208c61086",
           }}
         />
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployeesParticulars")}
         >
-          <View style={PayslipStyle.Group210}>
-            <Text style={PayslipStyle.Txt515}>Save and Continue</Text>
+          <View style={PaySlipStyle.Group307}>
+            <Text style={PaySlipStyle.Txt444}>Save and Continue</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <View style={PayslipStyle.Group371}>
-            <Text style={PayslipStyle.Txt515}>Save and Go Back</Text>
+          <View style={PaySlipStyle.Group568}>
+            <Text style={PaySlipStyle.Txt444}>Save and Go Back</Text>
           </View>
         </TouchableOpacity>
-      </View>
-      <View style={PayslipStyle.Group608}>
-        <Text style={PayslipStyle.Txt837}>Upload</Text>
       </View>
     </View>
   );
@@ -420,9 +430,13 @@ function EmployeesParticularsLoad() {
           />
         </View>
         <View style={EmployeesParticularsStyle.Group51}>
-          <Text style={EmployeesParticularsStyle.Txt191}>
-            Delete application
-          </Text>
+          <TouchableOpacity
+            onPress={() => navigation.dispatch(StackActions.popToTop())}
+          >
+            <Text style={EmployeesParticularsStyle.Txt191}>
+              Delete application
+            </Text>
+          </TouchableOpacity>
         </View>
         <View style={EmployeesParticularsStyle.Group64}>
           <Text style={EmployeesParticularsStyle.Txt098}>NS/SV Training</Text>
@@ -460,14 +474,22 @@ function EmployeesParticularsLoad() {
           <Text style={EmployeesParticularsStyle.Txt1004}>Phone</Text>
           <View style={EmployeesParticularsStyle.Rectangle126} />
         </View>
-        <View style={EmployeesParticularsStyle.Group199}>
-          <Text style={EmployeesParticularsStyle.Txt618}>
-            Save and Continue
-          </Text>
-        </View>
-        <View style={EmployeesParticularsStyle.Group616}>
-          <Text style={EmployeesParticularsStyle.Txt618}>Save and Go Back</Text>
-        </View>
+        <TouchableOpacity
+          onPress={() => navigation.navigate("EmployeesConfirmation")}
+        >
+          <View style={EmployeesParticularsStyle.Group199}>
+            <Text style={EmployeesParticularsStyle.Txt618}>
+              Save and Continue
+            </Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <View style={EmployeesParticularsStyle.Group616}>
+            <Text style={EmployeesParticularsStyle.Txt618}>
+              Save and Go Back
+            </Text>
+          </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -477,162 +499,160 @@ function EmployeesConfirmationLoad() {
   const navigation = useNavigation();
   return (
     <View style={EmployeesConfirmationStyles.ReviewSubmission}>
-      <View style={EmployeesConfirmationStyles.Group728}>
+      <View style={EmployeesConfirmationStyles.Group005}>
         <View style={EmployeesConfirmationStyles.Component2}>
-          <Text style={EmployeesConfirmationStyles.Txt281}>8:55</Text>
+          <Text style={EmployeesConfirmationStyles.Txt1081}>8:55</Text>
           <Image
             style={EmployeesConfirmationStyles.Vector}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-I71%3A382%3B14%3A9?alt=media&token=d9e8d49b-1a57-48ff-a097-a97094fb9999",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-I71%3A382%3B14%3A9?alt=media&token=d417ebf8-699e-48ea-a7f8-633508135440",
             }}
           />
           <Image
             style={EmployeesConfirmationStyles.Vector1}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-I71%3A382%3B14%3A7?alt=media&token=d1e2bde6-c211-4faf-8853-40315c0deb15",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-I71%3A382%3B14%3A7?alt=media&token=de47ab5c-a958-4abf-9d17-5c6dfb84015c",
             }}
           />
           <Image
             style={EmployeesConfirmationStyles.Vector2}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-I71%3A382%3B14%3A8?alt=media&token=6e3fd394-d3a7-4e8e-9a5a-4c91f1432a04",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-I71%3A382%3B14%3A8?alt=media&token=e1cf165b-b93a-448e-8ca4-fddaba97800d",
             }}
           />
         </View>
-        <View style={EmployeesConfirmationStyles.Group742}>
-          <View style={EmployeesConfirmationStyles.Group819}>
-            <Text style={EmployeesConfirmationStyles.Txt163}>Review</Text>
-            <Image
-              style={EmployeesConfirmationStyles.Vector3}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A400?alt=media&token=87aaf535-325f-4beb-add7-62da938f3bff",
-              }}
-            />
-            <Image
-              style={EmployeesConfirmationStyles.Vector3}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A660?alt=media&token=75de3b39-13f9-4b2a-a958-36eb1d8d8e75",
-              }}
-            />
-            <Image
-              style={EmployeesConfirmationStyles.Vector4}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A401?alt=media&token=a5b7bd41-6200-4053-a20c-b1706f2077b3",
-              }}
-            />
-            <Image
-              style={EmployeesConfirmationStyles.Vector5}
-              source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A398?alt=media&token=7a7d6cfd-81db-43dd-9026-bafbf43f8dc2",
-              }}
-            />
-          </View>
-          <Text style={EmployeesConfirmationStyles.Txt897}>Make Up Pay </Text>
+        <View style={EmployeesConfirmationStyles.Group0110}>
+          <Text style={EmployeesConfirmationStyles.Txt836}>Review</Text>
+          <Image
+            style={EmployeesConfirmationStyles.Vector3}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A400?alt=media&token=f746b083-a71f-44c5-82c7-8c50089edcb4",
+            }}
+          />
+          <Image
+            style={EmployeesConfirmationStyles.Vector3}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A660?alt=media&token=173b33f6-b0f9-4769-b026-c07db8b01658",
+            }}
+          />
+          <Image
+            style={EmployeesConfirmationStyles.Vector4}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A401?alt=media&token=2a1e3e77-fbf1-41c9-a0c1-dafd9053c395",
+            }}
+          />
+          <Image
+            style={EmployeesConfirmationStyles.Vector5}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A398?alt=media&token=13f55a8f-1bd8-4512-8966-5dccc48732b2",
+            }}
+          />
         </View>
-        <View style={EmployeesConfirmationStyles.Group309}>
-          <View style={EmployeesConfirmationStyles.Group213}>
-            <Text style={EmployeesConfirmationStyles.Txt795}>
-              Review your submission
-            </Text>
-            <Text style={EmployeesConfirmationStyles.Txt609}>
-              CAIFAN Engineering Pte. Ltd.
-            </Text>
-          </View>
-          <View style={EmployeesConfirmationStyles.Group133}>
-            <View style={EmployeesConfirmationStyles.Line1} />
-            <Text style={EmployeesConfirmationStyles.Txt128}>Claim Option</Text>
+        <View style={EmployeesConfirmationStyles.Group74}>
+          <Text style={EmployeesConfirmationStyles.Txt798}>
+            Review your submission
+          </Text>
+          <View style={EmployeesConfirmationStyles.Group65}>
+            <Text style={EmployeesConfirmationStyles.Txt928}>Claim Option</Text>
             <View style={EmployeesConfirmationStyles.Frame2}>
-              <Text style={EmployeesConfirmationStyles.Txt918}>
+              <Text style={EmployeesConfirmationStyles.Txt197}>
                 Average Income
               </Text>
             </View>
             <Image
               style={EmployeesConfirmationStyles.Vector6}
               source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A581?alt=media&token=3e67fff0-db8c-4618-962b-af4d70fa5605",
+                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A581?alt=media&token=1078fc89-71ae-4245-8cd7-34618549fcb2",
               }}
             />
           </View>
-          <View style={EmployeesConfirmationStyles.Group7210}>
-            <Text style={EmployeesConfirmationStyles.Txt944}>
+          <View style={EmployeesConfirmationStyles.Group66}>
+            <Text style={EmployeesConfirmationStyles.Txt769}>
               Payslip Upload
             </Text>
-            <Text style={EmployeesConfirmationStyles.Txt747}>
-              Michael Wang_Co....pdf
+            <Text style={EmployeesConfirmationStyles.Txt223}>
+              PDF NAME HERE
             </Text>
             <Image
               style={EmployeesConfirmationStyles.Vector6}
               source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A582?alt=media&token=4e8ea218-74aa-4397-a0b0-d3e7168f56e6",
+                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A582?alt=media&token=830480ea-c5e5-4226-928e-c81f0e32d81b",
               }}
             />
           </View>
-          <View style={EmployeesConfirmationStyles.Line2} />
-          <View style={EmployeesConfirmationStyles.Group7210}>
-            <Text style={EmployeesConfirmationStyles.Txt143}>
+          <View style={EmployeesConfirmationStyles.Group67}>
+            <Text style={EmployeesConfirmationStyles.Txt994}>
               NS/SV Training
             </Text>
             <Image
               style={EmployeesConfirmationStyles.Vector6}
               source={{
-                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/96vxv0w9kc8-71%3A583?alt=media&token=6e787179-db9c-4be2-ae9d-3ee45d2cad62",
+                uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/2u9ajrz2fj-71%3A583?alt=media&token=a442a021-13d4-4c4c-93e7-48f64256d784",
               }}
             />
           </View>
-          <View style={EmployeesConfirmationStyles.Group1019}>
-            <Text style={EmployeesConfirmationStyles.Txt684}>Start Date</Text>
-            <Text style={EmployeesConfirmationStyles.Txt609}>15/03/2022</Text>
+          <View style={EmployeesConfirmationStyles.Group68}>
+            <Text style={EmployeesConfirmationStyles.Txt531}>Start Date</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>15/03/2022</Text>
           </View>
-          <View style={EmployeesConfirmationStyles.Group1019}>
-            <Text style={EmployeesConfirmationStyles.Txt284}>End Date</Text>
-            <Text style={EmployeesConfirmationStyles.Txt609}>31/03/2022</Text>
+          <View style={EmployeesConfirmationStyles.Group68}>
+            <Text style={EmployeesConfirmationStyles.Txt393}>End Date</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>31/03/2022</Text>
           </View>
-          <View style={EmployeesConfirmationStyles.Group929}>
-            <Text style={EmployeesConfirmationStyles.Txt774}>
+          <View style={EmployeesConfirmationStyles.Group70}>
+            <Text style={EmployeesConfirmationStyles.Txt448}>
               Occupation/ Designation
             </Text>
-            <Text style={EmployeesConfirmationStyles.Txt609}>
+            <Text style={EmployeesConfirmationStyles.Txt407}>
               Principle Engineer
             </Text>
           </View>
-          <View style={EmployeesConfirmationStyles.Group316}>
-            <Text style={EmployeesConfirmationStyles.Txt8210}>Address</Text>
-            <Text style={EmployeesConfirmationStyles.Txt609}>
+          <View style={EmployeesConfirmationStyles.Group71}>
+            <Text style={EmployeesConfirmationStyles.Txt958}>
+              Company Particulars
+            </Text>
+          </View>
+          <View style={EmployeesConfirmationStyles.Group467}>
+            <Text style={EmployeesConfirmationStyles.Txt825}>Name</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>
+              CAIFAN Engineering Pte. Ltd.
+            </Text>
+          </View>
+          <View style={EmployeesConfirmationStyles.Group73}>
+            <Text style={EmployeesConfirmationStyles.Txt083}>Address</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>
               5 Cai Fan Lane, Singapore 324533
             </Text>
           </View>
-          <Text style={EmployeesConfirmationStyles.Txt941}>
-            Company Particulars
-          </Text>
-          <View style={EmployeesConfirmationStyles.Group316}>
-            <Text style={EmployeesConfirmationStyles.Txt361}>Phone</Text>
-            <Text style={EmployeesConfirmationStyles.Txt609}>6570 3498</Text>
+          <View style={EmployeesConfirmationStyles.Group877}>
+            <Text style={EmployeesConfirmationStyles.Txt6102}>Phone</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>6570 3498</Text>
           </View>
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployeesSubmission")}
         >
-          <View style={EmployeesConfirmationStyles.Group767}>
-            <Text style={EmployeesConfirmationStyles.Txt399}>Submit</Text>
+          <View style={EmployeesConfirmationStyles.Group662}>
+            <Text style={EmployeesConfirmationStyles.Txt662}>Submit</Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <View style={EmployeesConfirmationStyles.Group9810}>
-            <Text style={EmployeesConfirmationStyles.Txt399}>
+          <View style={EmployeesConfirmationStyles.Group355}>
+            <Text style={EmployeesConfirmationStyles.Txt662}>
               Save and Go Back
             </Text>
           </View>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        onPress={() => navigation.dispatch(StackActions.popToTop())}
-      >
-        <View style={EmployeesConfirmationStyles.Group52}>
-          <Text style={EmployeesConfirmationStyles.Txt156}>
+      <View style={EmployeesConfirmationStyles.Group52}>
+        <TouchableOpacity
+          onPress={() => navigation.dispatch(StackActions.popToTop())}
+        >
+          <Text style={EmployeesConfirmationStyles.Txt772}>
             Delete application
           </Text>
-        </View>
-      </TouchableOpacity>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -1752,14 +1772,13 @@ const ClaimsOptionsStyle = StyleSheet.create({
   },
 });
 
-// Payslip Styles
-const PayslipStyle = StyleSheet.create({
+// PaySlip Styles
+const PaySlipStyle = StyleSheet.create({
   UploadPaySlip: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    position: "relative",
     paddingTop: 13,
     paddingBottom: 26,
     paddingLeft: 0,
@@ -1768,7 +1787,7 @@ const PayslipStyle = StyleSheet.create({
     width: 428,
     height: 926,
   },
-  Group890: {
+  Group871: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -1780,7 +1799,7 @@ const PayslipStyle = StyleSheet.create({
     alignItems: "flex-start",
     marginBottom: 11,
   },
-  Txt489: {
+  Txt461: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
     fontWeight: "700",
@@ -1802,7 +1821,7 @@ const PayslipStyle = StyleSheet.create({
     height: 12.5,
   },
 
-  Group409: {
+  Group714: {
     display: "flex",
     flexDirection: "row",
     paddingTop: 14,
@@ -1811,7 +1830,7 @@ const PayslipStyle = StyleSheet.create({
     paddingRight: 21,
     backgroundColor: "rgba(29,129,20,1)",
   },
-  Txt654: {
+  Txt275: {
     fontSize: 26,
     fontFamily: "Inter, sans-serif",
     fontWeight: "700",
@@ -1848,7 +1867,7 @@ const PayslipStyle = StyleSheet.create({
     width: 428,
     height: 39,
   },
-  Txt736: {
+  Txt734: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
     fontWeight: "700",
@@ -1859,7 +1878,7 @@ const PayslipStyle = StyleSheet.create({
     height: 22,
   },
 
-  Txt303: {
+  Txt434: {
     fontSize: 20,
     fontFamily: "Inter, sans-serif",
     fontWeight: "700",
@@ -1869,70 +1888,28 @@ const PayslipStyle = StyleSheet.create({
     width: 404,
     marginBottom: 27,
   },
-  Group663: {
-    paddingTop: 9,
-    paddingBottom: 6,
+  Group76: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 0,
+    paddingBottom: 0,
     paddingLeft: 10,
-    paddingRight: 108,
+    paddingRight: 0,
     marginBottom: 28,
     borderRadius: 50,
     backgroundColor: "rgba(213,217,212,1)",
-    width: 364,
-    height: 36,
   },
-  Txt184: {
+  Txt1064: {
     fontSize: 15,
     fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(47,46,65,1)",
     textAlign: "center",
     justifyContent: "center",
+    marginRight: 5,
   },
-
-  Group57: {
-    width: 373,
-    height: 241,
-    marginBottom: 213,
-  },
-  Group210: {
-    paddingTop: 11,
-    paddingBottom: 9,
-    paddingLeft: 68,
-    paddingRight: 67,
-    marginBottom: 16,
-    borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 340,
-    height: 50,
-  },
-  Txt515: {
-    fontSize: 22,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "700",
-    color: "rgba(29,129,20,1)",
-  },
-
-  Group371: {
-    paddingTop: 11,
-    paddingBottom: 9,
-    paddingLeft: 73,
-    paddingRight: 72,
-    borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 340,
-    height: 50,
-  },
-  Txt515: {
-    fontSize: 22,
-    fontFamily: "Inter, sans-serif",
-    fontWeight: "700",
-    color: "rgba(29,129,20,1)",
-  },
-
-  Group608: {
-    position: "absolute",
-    top: 265,
-    none: "0px",
+  Group312: {
     paddingTop: 8,
     paddingBottom: 6,
     paddingLeft: 22,
@@ -1945,13 +1922,53 @@ const PayslipStyle = StyleSheet.create({
     width: 106,
     height: 36,
   },
-  Txt837: {
+  Txt5410: {
     fontSize: 16,
     fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,1)",
     textAlign: "center",
     justifyContent: "center",
+  },
+
+  Group57: {
+    width: 373,
+    height: 241,
+    marginBottom: 213,
+  },
+  Group307: {
+    paddingTop: 11,
+    paddingBottom: 9,
+    paddingLeft: 68,
+    paddingRight: 67,
+    marginBottom: 16,
+    borderRadius: 50,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    width: 340,
+    height: 50,
+  },
+  Txt444: {
+    fontSize: 22,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(29,129,20,1)",
+  },
+
+  Group568: {
+    paddingTop: 11,
+    paddingBottom: 9,
+    paddingLeft: 73,
+    paddingRight: 72,
+    borderRadius: 50,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    width: 340,
+    height: 50,
+  },
+  Txt444: {
+    fontSize: 22,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(29,129,20,1)",
   },
 });
 
@@ -2374,7 +2391,7 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     width: 428,
     height: 926,
   },
-  Group728: {
+  Group005: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -2386,9 +2403,9 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     alignItems: "flex-start",
     marginBottom: 11,
   },
-  Txt281: {
+  Txt1081: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,1)",
     marginRight: 229,
@@ -2408,24 +2425,19 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     height: 12.5,
   },
 
-  Group742: {
-    position: "relative",
-    marginBottom: 51,
-    backgroundColor: "rgba(29,129,20,1)",
-    width: 428,
-    height: 61,
-  },
-  Group819: {
+  Group0110: {
     display: "flex",
     flexDirection: "row",
-    position: "absolute",
-    top: 15,
-    width: 376,
-    height: 32,
+    paddingTop: 14,
+    paddingBottom: 13,
+    paddingLeft: 29,
+    paddingRight: 21,
+    marginBottom: 70,
+    backgroundColor: "rgba(29,129,20,1)",
   },
-  Txt163: {
+  Txt836: {
     fontSize: 26,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(255, 255, 255, 1)",
     marginRight: 138,
@@ -2450,67 +2462,34 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     height: 23,
   },
 
-  Txt897: {
-    position: "absolute",
-    top: 15,
-    left: 36,
-    fontSize: 26,
-
-    fontWeight: "700",
-    color: "rgba(255, 255, 255, 1)",
-    width: 163,
-    height: 31,
-  },
-
-  Group309: {
+  Group74: {
     display: "flex",
     flexDirection: "column",
-    paddingTop: 13,
-    paddingBottom: 29,
+    paddingTop: 0,
+    paddingBottom: 0,
     paddingLeft: 6,
-    paddingRight: 10,
-    marginBottom: 46,
-    borderRadius: 10,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    shadowColor: "rgba(0,0,0,0.25)",
-    elevation: 0,
-    shadowOffset: { width: 0, height: 4 },
+    paddingRight: 0,
+    marginBottom: 77,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "rgba(202,202,202,1)",
   },
-  Group213: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "flex-end",
-  },
-  Txt795: {
+  Txt798: {
     fontSize: 20,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginBottom: 19,
   },
-  Txt609: {
-    fontSize: 16,
-
-    fontWeight: "400",
-    color: "rgba(0,0,0,0.65)",
-  },
-
-  Group133: {
+  Group65: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "flex-end",
-    marginBottom: 16,
+    alignItems: "center",
+    marginBottom: 23,
   },
-  Line1: {
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(202,202,202,1)",
-    width: 379,
-    height: 1,
-  },
-  Txt128: {
+  Txt928: {
     fontSize: 18,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 28,
@@ -2526,9 +2505,9 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     paddingRight: 9,
     marginRight: 49,
   },
-  Txt918: {
+  Txt197: {
     fontSize: 18,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(0,0,0,0.65)",
   },
@@ -2538,21 +2517,21 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     height: 18.66,
   },
 
-  Group7210: {
+  Group66: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 19,
+    marginBottom: 31,
   },
-  Txt944: {
+  Txt769: {
     fontSize: 18,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 22,
   },
-  Txt747: {
+  Txt223: {
     fontSize: 15,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(47,46,65,1)",
     textAlign: "center",
@@ -2564,23 +2543,14 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     height: 18.66,
   },
 
-  Line2: {
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(202,202,202,1)",
-    transform: "rotate(-0.02deg);",
-    width: 379,
-    height: 1,
-    marginBottom: 16,
-  },
-  Group7210: {
+  Group67: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 19,
+    marginBottom: 20,
   },
-  Txt143: {
+  Txt994: {
     fontSize: 18,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 214,
@@ -2590,108 +2560,132 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     height: 18.66,
   },
 
-  Group1019: {
+  Group68: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 20,
+    marginBottom: 21,
   },
-  Txt684: {
+  Txt531: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 72,
   },
-  Txt609: {
+  Txt407: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(0,0,0,0.65)",
   },
 
-  Group1019: {
+  Group68: {
     display: "flex",
     flexDirection: "row",
-    marginBottom: 20,
+    marginBottom: 21,
   },
-  Txt284: {
+  Txt393: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 81,
   },
-  Txt609: {
+  Txt407: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(0,0,0,0.65)",
   },
 
-  Group929: {
+  Group70: {
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 128,
+    marginBottom: 40,
   },
-  Txt774: {
+  Txt448: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 54,
   },
-  Txt609: {
+  Txt407: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(0,0,0,0.65)",
   },
 
-  Group316: {
+  Group71: {
+    marginBottom: 21,
+    width: 185,
+    height: 22,
+  },
+  Txt958: {
+    fontSize: 18,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(0,0,0,0.65)",
+  },
+
+  Group467: {
     display: "flex",
     flexDirection: "row",
+    marginBottom: 26,
   },
-  Txt8210: {
+  Txt825: {
     fontSize: 16,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(0,0,0,0.65)",
+    marginRight: 107,
+  },
+  Txt407: {
+    fontSize: 16,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "400",
+    color: "rgba(0,0,0,0.65)",
+  },
 
+  Group73: {
+    display: "flex",
+    flexDirection: "row",
+    marginBottom: 15,
+  },
+  Txt083: {
+    fontSize: 16,
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 86,
   },
-  Txt609: {
+  Txt407: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(0,0,0,0.65)",
   },
 
-  Txt941: {
-    fontSize: 18,
-
-    fontWeight: "700",
-    color: "rgba(0,0,0,0.65)",
-    marginBottom: 119,
-  },
-  Group316: {
+  Group877: {
     display: "flex",
     flexDirection: "row",
   },
-  Txt361: {
+  Txt6102: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,0.65)",
     marginRight: 103,
   },
-  Txt609: {
+  Txt407: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "400",
     color: "rgba(0,0,0,0.65)",
   },
 
-  Group767: {
+  Group662: {
     paddingTop: 11,
     paddingBottom: 9,
     paddingLeft: 131,
@@ -2705,14 +2699,14 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     width: 340,
     height: 50,
   },
-  Txt399: {
+  Txt662: {
     fontSize: 22,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(29,129,20,1)",
   },
 
-  Group9810: {
+  Group355: {
     paddingTop: 11,
     paddingBottom: 9,
     paddingLeft: 73,
@@ -2725,9 +2719,9 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     width: 340,
     height: 50,
   },
-  Txt399: {
+  Txt662: {
     fontSize: 22,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(29,129,20,1)",
   },
@@ -2744,9 +2738,9 @@ const EmployeesConfirmationStyles = StyleSheet.create({
     width: 428,
     height: 39,
   },
-  Txt156: {
+  Txt772: {
     fontSize: 16,
-
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(249,0,0,0.9)",
     textAlign: "center",
