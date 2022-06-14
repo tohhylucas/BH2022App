@@ -752,9 +752,6 @@ function ManageEmployeesLoad() {
           <Text style={ManageEmployeesStyle.Txt814}>
             Application for Employers
           </Text>
-          <Text style={ManageEmployeesStyle.Txt814}>
-            Application for Employers
-          </Text>
         </View>
         <View style={ManageEmployeesStyle.Group451}>
           <Image
@@ -856,7 +853,7 @@ function TimesheetLoad() {
           file.
         </Text>
         <View style={TimesheetStyles.Group59}>
-          <Text style={TimesheetStyles.Txt5910}></Text>
+          <Text style={TimesheetStyles.Txt5910}>{}</Text>
           <TouchableOpacity onPress={pickDocument}>
             <View style={TimesheetStyles.Group397}>
               <Text style={TimesheetStyles.Txt492}>Upload</Text>
