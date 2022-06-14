@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Image,
@@ -11,6 +11,7 @@ import {
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { StackActions } from "@react-navigation/native";
+import * as DocumentPicker from "expo-document-picker";
 
 const Stack = createStackNavigator();
 
@@ -274,92 +275,91 @@ function PaySlipLoad() {
   const navigation = useNavigation();
   return (
     <View style={PayslipStyle.UploadPaySlip}>
-      <View style={PayslipStyle.Group579}>
+      <View style={PayslipStyle.Group890}>
         <View style={PayslipStyle.Component2}>
-          <Text style={PayslipStyle.Txt9810}>8:55</Text>
+          <Text style={PayslipStyle.Txt489}>8:55</Text>
           <Image
             style={PayslipStyle.Vector}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-I26%3A488%3B14%3A9?alt=media&token=b7fc2977-7401-4604-ab80-f55af2e6daf7",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-I26%3A488%3B14%3A9?alt=media&token=4a65099e-ce86-47f3-a207-5f2e744e2946",
             }}
           />
           <Image
             style={PayslipStyle.Vector1}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-I26%3A488%3B14%3A7?alt=media&token=52a84b8b-68bf-4925-853e-f388a9f63550",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-I26%3A488%3B14%3A7?alt=media&token=a17efa93-0d7e-4f67-b029-39e936bc8ca3",
             }}
           />
           <Image
             style={PayslipStyle.Vector2}
             source={{
-              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-I26%3A488%3B14%3A8?alt=media&token=19f7e352-0aee-4dd8-8fa3-99482d8ca33b",
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-I26%3A488%3B14%3A8?alt=media&token=3a537f92-74ae-4d31-8bc4-0a3e39ea3f8a",
             }}
           />
         </View>
-        <Text style={PayslipStyle.Txt8210}>
+        <View style={PayslipStyle.Group409}>
+          <Text style={PayslipStyle.Txt654}>Upload Payslip</Text>
+          <Image
+            style={PayslipStyle.Vector3}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A544?alt=media&token=31797444-809b-4c4e-98d2-0207fe807a2f",
+            }}
+          />
+          <Image
+            style={PayslipStyle.Vector4}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A543?alt=media&token=b51015f8-ec4b-49e2-9406-b524cd3d9451",
+            }}
+          />
+          <Image
+            style={PayslipStyle.Vector3}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A545?alt=media&token=14d28e8b-c9ac-44fc-9326-3d403f8977ec",
+            }}
+          />
+          <Image
+            style={PayslipStyle.Vector5}
+            source={{
+              uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A546?alt=media&token=bebf528a-f67b-485d-b022-9b9123b80eac",
+            }}
+          />
+        </View>
+        <TouchableOpacity
+          onPress={() => navigation.dispatch(StackActions.popToTop())}
+        >
+          <View style={PayslipStyle.Group50}>
+            <Text style={PayslipStyle.Txt736}>Delete application</Text>
+          </View>
+        </TouchableOpacity>
+        <Text style={PayslipStyle.Txt303}>
           Please upload your past 6 month’s net income as one PDF
         </Text>
-        <View style={PayslipStyle.Group680}>
-          <Text style={PayslipStyle.Txt267}>
+        <View style={PayslipStyle.Group663}>
+          <Text style={PayslipStyle.Txt184}>
             Michael Wang_Compiled Pay....pdf
           </Text>
         </View>
         <Image
           style={PayslipStyle.Group57}
           source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-71%3A672?alt=media&token=511ca2c5-b35c-4753-8567-976c2d0ab62a",
+            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/9lw0w0502pd-71%3A672?alt=media&token=bacc1828-34f4-4486-a606-4edc15b2f431",
           }}
         />
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployeesParticulars")}
         >
-          <View style={PayslipStyle.Group329}>
-            <Text style={PayslipStyle.Txt748}>Save and Continue</Text>
+          <View style={PayslipStyle.Group210}>
+            <Text style={PayslipStyle.Txt515}>Save and Continue</Text>
           </View>
         </TouchableOpacity>
-
         <TouchableOpacity onPress={() => navigation.goBack()}>
-          <View style={PayslipStyle.Group451}>
-            <Text style={PayslipStyle.Txt748}>Save and Go Back</Text>
+          <View style={PayslipStyle.Group371}>
+            <Text style={PayslipStyle.Txt515}>Save and Go Back</Text>
           </View>
         </TouchableOpacity>
       </View>
-      <View style={PayslipStyle.Group961}>
-        <Text style={PayslipStyle.Txt257}>Upload</Text>
-      </View>
-      <View style={PayslipStyle.Group016}>
-        <Text style={PayslipStyle.Txt575}>Upload Payslip</Text>
-        <Image
-          style={PayslipStyle.Vector3}
-          source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-71%3A544?alt=media&token=69fcd88a-7328-4038-9939-c2638cb493f2",
-          }}
-        />
-        <Image
-          style={PayslipStyle.Vector4}
-          source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-71%3A543?alt=media&token=231149f7-8116-444f-a691-0dea5f692bdb",
-          }}
-        />
-        <Image
-          style={PayslipStyle.Vector3}
-          source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-71%3A545?alt=media&token=2699689b-8fb0-411d-8e0f-a12da7bc83cc",
-          }}
-        />
-        <Image
-          style={PayslipStyle.Vector5}
-          source={{
-            uri: "https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/bvl5gr1bx5d-71%3A546?alt=media&token=76f10528-82aa-4730-a8d0-3f1c04e42c52",
-          }}
-        />
-        <TouchableOpacity
-          onPress={() => navigation.dispatch(StackActions.popToTop())}
-        >
-          <View style={PayslipStyle.Group51}>
-            <Text style={PayslipStyle.Txt978}>Delete application</Text>
-          </View>
-        </TouchableOpacity>
+      <View style={PayslipStyle.Group608}>
+        <Text style={PayslipStyle.Txt837}>Upload</Text>
       </View>
     </View>
   );
@@ -784,6 +784,14 @@ function ManageEmployeesLoad() {
 
 function TimesheetLoad() {
   const navigation = useNavigation();
+
+  const pickDocument = async () => {
+    let result = await DocumentPicker.getDocumentAsync({});
+    console.log(result.uri);
+    console.log(result);
+    console.log(result.name);
+  };
+
   return (
     <View style={TimesheetStyles.UploadTimesheet}>
       <View style={TimesheetStyles.Group7106}>
@@ -847,12 +855,12 @@ function TimesheetLoad() {
           file.
         </Text>
         <View style={TimesheetStyles.Group59}>
-          <Text style={TimesheetStyles.Txt5910}>
-            Michael Wang_Working Ho....xls
-          </Text>
-          <View style={TimesheetStyles.Group397}>
-            <Text style={TimesheetStyles.Txt492}>Upload</Text>
-          </View>
+          <Text style={TimesheetStyles.Txt5910}>{}</Text>
+          <TouchableOpacity onPress={pickDocument}>
+            <View style={TimesheetStyles.Group397}>
+              <Text style={TimesheetStyles.Txt492}>Upload</Text>
+            </View>
+          </TouchableOpacity>
         </View>
         <Image
           style={TimesheetStyles.Group60}
@@ -1748,20 +1756,21 @@ const PayslipStyle = StyleSheet.create({
     width: 428,
     height: 926,
   },
-  Group579: {
+  Group890: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "flex-end",
+    alignItems: "center",
   },
   Component2: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    marginBottom: 154,
+    marginBottom: 11,
   },
-  Txt9810: {
+  Txt489: {
     fontSize: 16,
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(0,0,0,1)",
     marginRight: 229,
@@ -1781,154 +1790,18 @@ const PayslipStyle = StyleSheet.create({
     height: 12.5,
   },
 
-  Txt8210: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "rgba(0,0,0,0.85)",
-    textAlign: "center",
-    justifyContent: "center",
-    width: 404,
-    marginBottom: 27,
-  },
-  Group680: {
-    paddingTop: 9,
-    paddingBottom: 6,
-    paddingLeft: 10,
-    paddingRight: 108,
-    marginBottom: 28,
-    borderRadius: 50,
-    backgroundColor: "rgba(213,217,212,1)",
-    width: 364,
-    height: 36,
-  },
-  Txt267: {
-    fontSize: 15,
-    fontWeight: "400",
-    color: "rgba(47,46,65,1)",
-    textAlign: "center",
-    justifyContent: "center",
-  },
-
-  Group57: {
-    width: 373,
-    height: 241,
-    marginBottom: 213,
-  },
-  Group329: {
-    paddingTop: 11,
-    paddingBottom: 9,
-    paddingLeft: 68,
-    paddingRight: 67,
-    marginBottom: 16,
-    borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 340,
-    height: 50,
-  },
-  Txt748: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "rgba(29,129,20,1)",
-  },
-
-  Group451: {
-    paddingTop: 11,
-    paddingBottom: 9,
-    paddingLeft: 73,
-    paddingRight: 72,
-    borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 340,
-    height: 50,
-  },
-  Txt748: {
-    fontSize: 22,
-    fontWeight: "700",
-    color: "rgba(29,129,20,1)",
-  },
-
-  Group961: {
-    position: "absolute",
-    top: 265,
-    paddingTop: 8,
-    paddingBottom: 6,
-    paddingLeft: 22,
-    paddingRight: 25,
-    borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "rgba(213,217,212,1)",
-    width: 106,
-    height: 36,
-  },
-  Txt257: {
-    fontSize: 16,
-    fontWeight: "700",
-    color: "rgba(0,0,0,1)",
-    textAlign: "center",
-    justifyContent: "center",
-  },
-
-  Group50: {
-    position: "absolute",
-    top: 107,
-    left: 0,
-    paddingTop: 8,
-    paddingBottom: 7,
-    paddingLeft: 89,
-    paddingRight: 89,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 39,
-  },
-  Txt978: {
-    fontSize: 16,
-    fontWeight: "700",
-    color: "rgba(249,0,0,0.9)",
-    textAlign: "center",
-    justifyContent: "center",
-    width: 248,
-    height: 22,
-  },
-
-  Group51: {
-    position: "absolute",
-    top: 106,
-    left: 0,
-    paddingTop: 8,
-    paddingBottom: 7,
-    paddingLeft: 89,
-    paddingRight: 89,
-    backgroundColor: "rgba(255, 255, 255, 1)",
-    width: 428,
-    height: 39,
-  },
-  Txt978: {
-    fontSize: 16,
-    fontWeight: "700",
-    color: "rgba(249,0,0,0.9)",
-    textAlign: "center",
-    justifyContent: "center",
-    width: 248,
-    height: 22,
-  },
-
-  Group016: {
+  Group409: {
     display: "flex",
     flexDirection: "row",
-    position: "absolute",
-    top: 46,
     paddingTop: 14,
     paddingBottom: 13,
     paddingLeft: 21,
     paddingRight: 21,
     backgroundColor: "rgba(29,129,20,1)",
-    width: 428,
-    height: 61,
   },
-  Txt575: {
+  Txt654: {
     fontSize: 26,
+    fontFamily: "Inter, sans-serif",
     fontWeight: "700",
     color: "rgba(255, 255, 255, 1)",
     marginRight: 51,
@@ -1951,6 +1824,122 @@ const PayslipStyle = StyleSheet.create({
   Vector5: {
     width: 23,
     height: 23,
+  },
+
+  Group50: {
+    paddingTop: 8,
+    paddingBottom: 7,
+    paddingLeft: 89,
+    paddingRight: 89,
+    marginBottom: 43,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    width: 428,
+    height: 39,
+  },
+  Txt736: {
+    fontSize: 16,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(249,0,0,0.9)",
+    textAlign: "center",
+    justifyContent: "center",
+    width: 248,
+    height: 22,
+  },
+
+  Txt303: {
+    fontSize: 20,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(0,0,0,0.85)",
+    textAlign: "center",
+    justifyContent: "center",
+    width: 404,
+    marginBottom: 27,
+  },
+  Group663: {
+    paddingTop: 9,
+    paddingBottom: 6,
+    paddingLeft: 10,
+    paddingRight: 108,
+    marginBottom: 28,
+    borderRadius: 50,
+    backgroundColor: "rgba(213,217,212,1)",
+    width: 364,
+    height: 36,
+  },
+  Txt184: {
+    fontSize: 15,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "400",
+    color: "rgba(47,46,65,1)",
+    textAlign: "center",
+    justifyContent: "center",
+  },
+
+  Group57: {
+    width: 373,
+    height: 241,
+    marginBottom: 213,
+  },
+  Group210: {
+    paddingTop: 11,
+    paddingBottom: 9,
+    paddingLeft: 68,
+    paddingRight: 67,
+    marginBottom: 16,
+    borderRadius: 50,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    width: 340,
+    height: 50,
+  },
+  Txt515: {
+    fontSize: 22,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(29,129,20,1)",
+  },
+
+  Group371: {
+    paddingTop: 11,
+    paddingBottom: 9,
+    paddingLeft: 73,
+    paddingRight: 72,
+    borderRadius: 50,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    width: 340,
+    height: 50,
+  },
+  Txt515: {
+    fontSize: 22,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(29,129,20,1)",
+  },
+
+  Group608: {
+    position: "absolute",
+    top: 265,
+    none: "0px",
+    paddingTop: 8,
+    paddingBottom: 6,
+    paddingLeft: 22,
+    paddingRight: 25,
+    borderRadius: 50,
+    backgroundColor: "rgba(255, 255, 255, 1)",
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "rgba(213,217,212,1)",
+    width: 106,
+    height: 36,
+  },
+  Txt837: {
+    fontSize: 16,
+    fontFamily: "Inter, sans-serif",
+    fontWeight: "700",
+    color: "rgba(0,0,0,1)",
+    textAlign: "center",
+    justifyContent: "center",
   },
 });
 
