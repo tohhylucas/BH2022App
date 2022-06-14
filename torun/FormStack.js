@@ -9,12 +9,44 @@ import {
   TouchableHighlight,
   TextInput,
 } from "react-native";
+
 import { createStackNavigator } from "@react-navigation/stack";
 import { useNavigation } from "@react-navigation/native";
 import { StackActions } from "@react-navigation/native";
 import * as DocumentPicker from "expo-document-picker";
 
 const Stack = createStackNavigator();
+
+function UpdateGlobal(variable, input) {
+  global.variable = input;
+}
+
+//Global Variables for Employees
+
+global.EmployeePaySlipName = "";
+global.EmployeeNSSVStartDate = "";
+global.EmployeeNSSVEndDate = "";
+global.EmployeeDOE = "";
+global.EmployeeOccupation = "";
+global.EmployeeCompanyName = "";
+global.EmployeeCompanyAddress = "";
+global.EmployeeCompanyPhone = "";
+
+//Global Variables for Employers 1st input
+global.EmployerTimesheet = "";
+global.EmployerCSN = "";
+global.EmployerEmployeeCompanyName = "";
+global.EmployerEmployeeCompanyAddress = "";
+global.EmployerEmployeeCompanyPhone = "";
+global.EmployerEmployeeOccupation = "";
+global.EmployerEmployeeDOE = "";
+
+//Global Variables for Employers 2nd input
+global.EmployerName = "Michael Wang";
+global.EmployerOccupation = "";
+global.EmployerNRIC = "S1234567G";
+global.EmployerPhone = "96323488";
+global.EmployerEmail = "MichaelWang@gmail.com";
 
 // EMPLOYEES SECTION
 function ProfileLoad() {
@@ -281,6 +313,7 @@ function PaySlipLoad() {
     console.log(result);
     console.log(result.name);
     changePaySlipName(result.name);
+    global.EmployeePaySlipName = result.name;
   };
 
   return (
@@ -378,6 +411,19 @@ function PaySlipLoad() {
 
 function EmployeesParticularsLoad() {
   const navigation = useNavigation();
+  const [NSSVStartDate, changeNSSVStartDate] = useState("DD/MM/YYYY");
+  const [NSSVEndDate, changeNSSVEndDate] = useState("DD/MM/YYYY");
+  const [EmployeeOccupation, changeEmployeeOccupation] = useState("");
+  const [EmployeeCompanyName, changeEmployeeCompanyName] = useState("");
+  const [EmployeeCompanyAddress, changeEmployeeCompanyAddress] = useState("");
+  const [EmployeeCompanyPhone, changeEmployeeCompanyPhone] = useState("");
+  global.EmployeeNSSVStartDate = NSSVStartDate;
+  global.EmployeeNSSVEndDate = NSSVEndDate;
+  global.EmployeeOccupation = EmployeeOccupation;
+  global.EmployeeCompanyName = EmployeeCompanyName;
+  global.EmployeeCompanyAddress = EmployeeCompanyAddress;
+  global.EmployeeCompanyPhone = EmployeeCompanyPhone;
+
   return (
     <View style={EmployeesParticularsStyle.EnterParticulars}>
       <View style={EmployeesParticularsStyle.Group1095}>
@@ -447,10 +493,18 @@ function EmployeesParticularsLoad() {
             </View>
             <View style={EmployeesParticularsStyle.Group471}>
               <View style={EmployeesParticularsStyle.Group175}>
-                <TextInput style={styles.ShortTextInput} />
+                <TextInput
+                  style={styles.ShortTextInput}
+                  onChangeText={changeNSSVStartDate}
+                  value={NSSVStartDate}
+                />
               </View>
               <View style={EmployeesParticularsStyle.Group6910}>
-                <TextInput style={styles.ShortTextInput} />
+                <TextInput
+                  style={styles.ShortTextInput}
+                  onChangeText={changeNSSVEndDate}
+                  value={NSSVEndDate}
+                />
               </View>
             </View>
           </View>
@@ -463,16 +517,32 @@ function EmployeesParticularsLoad() {
           <Text style={EmployeesParticularsStyle.Txt321}>
             Occupation/Designation
           </Text>
-          <TextInput style={styles.LongTextInput} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={changeEmployeeOccupation}
+            value={EmployeeOccupation}
+          />
           <Text style={EmployeesParticularsStyle.Txt829}>
             Company Particulars
           </Text>
           <Text style={EmployeesParticularsStyle.Txt555}>Name</Text>
-          <TextInput style={styles.LongTextInput} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={changeEmployeeCompanyName}
+            value={EmployeeCompanyName}
+          />
           <Text style={EmployeesParticularsStyle.Txt555}>Address</Text>
-          <TextInput style={styles.LongTextInput} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={changeEmployeeCompanyAddress}
+            value={EmployeeCompanyAddress}
+          />
           <Text style={EmployeesParticularsStyle.Txt1004}>Phone</Text>
-          <TextInput style={styles.LongTextInput} />
+          <TextInput
+            style={styles.LongTextInput}
+            onChangeText={changeEmployeeCompanyPhone}
+            value={EmployeeCompanyPhone}
+          />
         </View>
         <TouchableOpacity
           onPress={() => navigation.navigate("EmployeesConfirmation")}
@@ -571,7 +641,7 @@ function EmployeesConfirmationLoad() {
               Payslip Upload
             </Text>
             <Text style={EmployeesConfirmationStyles.Txt223}>
-              PDF NAME HERE
+              {EmployeePaySlipName}
             </Text>
             <Image
               style={EmployeesConfirmationStyles.Vector6}
@@ -593,18 +663,22 @@ function EmployeesConfirmationLoad() {
           </View>
           <View style={EmployeesConfirmationStyles.Group68}>
             <Text style={EmployeesConfirmationStyles.Txt531}>Start Date</Text>
-            <Text style={EmployeesConfirmationStyles.Txt407}>15/03/2022</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>
+              {EmployeeNSSVStartDate}
+            </Text>
           </View>
           <View style={EmployeesConfirmationStyles.Group68}>
             <Text style={EmployeesConfirmationStyles.Txt393}>End Date</Text>
-            <Text style={EmployeesConfirmationStyles.Txt407}>31/03/2022</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>
+              {EmployeeNSSVEndDate}
+            </Text>
           </View>
           <View style={EmployeesConfirmationStyles.Group70}>
             <Text style={EmployeesConfirmationStyles.Txt448}>
               Occupation/ Designation
             </Text>
             <Text style={EmployeesConfirmationStyles.Txt407}>
-              Principle Engineer
+              {EmployeeOccupation}
             </Text>
           </View>
           <View style={EmployeesConfirmationStyles.Group71}>
@@ -615,18 +689,20 @@ function EmployeesConfirmationLoad() {
           <View style={EmployeesConfirmationStyles.Group467}>
             <Text style={EmployeesConfirmationStyles.Txt825}>Name</Text>
             <Text style={EmployeesConfirmationStyles.Txt407}>
-              CAIFAN Engineering Pte. Ltd.
+              {EmployeeCompanyName}
             </Text>
           </View>
           <View style={EmployeesConfirmationStyles.Group73}>
             <Text style={EmployeesConfirmationStyles.Txt083}>Address</Text>
             <Text style={EmployeesConfirmationStyles.Txt407}>
-              5 Cai Fan Lane, Singapore 324533
+              {EmployeeCompanyAddress}
             </Text>
           </View>
           <View style={EmployeesConfirmationStyles.Group877}>
             <Text style={EmployeesConfirmationStyles.Txt6102}>Phone</Text>
-            <Text style={EmployeesConfirmationStyles.Txt407}>6570 3498</Text>
+            <Text style={EmployeesConfirmationStyles.Txt407}>
+              {EmployeeCompanyPhone}
+            </Text>
           </View>
         </View>
         <TouchableOpacity
@@ -778,6 +854,7 @@ function TimesheetLoad() {
     console.log(result);
     console.log(result.name);
     changeDocumentName(result.name);
+    global.EmployerTimesheetName = result.name;
   };
 
   return (
@@ -876,13 +953,20 @@ function TimesheetLoad() {
 function EmployersParticulars1Load() {
   const navigation = useNavigation();
 
-  const [CSN, onChangeCSN] = React.useState("");
-  const [EmployeeName, onChangeEmployeeName] = React.useState("");
-  const [EmployeeAddress, onChangeEmployeeAddress] = React.useState("");
-  const [EmployeePhone, onChangeEmployeePhone] = React.useState("");
-  const [EmployeeOccupation, onChangeEmployeeOccupation] = React.useState("");
-  const [EmployeeEmployment, onChangeEmployeeEmployment] =
+  const [CSN, ChangeCSN] = React.useState("");
+  const [EmployeeCompanyName, ChangeEmployeeCompanyName] = React.useState("");
+  const [EmployeeCompanyAddress, ChangeEmployeeCompanyAddress] =
+    React.useState("");
+  const [EmployeeCompanyPhone, ChangeEmployeeCompanyPhone] = React.useState("");
+  const [EmployeeOccupation, ChangeEmployeeOccupation] = React.useState("");
+  const [EmployeeEmployment, ChangeEmployeeEmployment] =
     React.useState("DD/MM/YYYY");
+  global.EmployerCSN = CSN;
+  global.EmployerEmployeeCompanyName = EmployeeCompanyName;
+  global.EmployerEmployeeCompanyAddress = EmployeeCompanyAddress;
+  global.EmployerEmployeeCompanyPhone = EmployeeCompanyPhone;
+  global.EmployerEmployeeOccupation = EmployeeOccupation;
+  global.EmployerEmployeeDOE = EmployeeEmployment;
 
   return (
     <View style={EmployersParticulars1.EmployeeSDetails}>
@@ -956,7 +1040,7 @@ function EmployersParticulars1Load() {
           </Text>
           <TextInput
             style={styles.LongTextInput}
-            onChangeText={onChangeCSN}
+            onChangeText={ChangeCSN}
             value={CSN}
           />
           <Text style={EmployersParticulars1.Txt466}>
@@ -965,20 +1049,20 @@ function EmployersParticulars1Load() {
           <Text style={EmployersParticulars1.Txt894}>Name</Text>
           <TextInput
             style={styles.LongTextInput}
-            onChangeText={onChangeEmployeeName}
-            value={EmployeeName}
+            onChangeText={ChangeEmployeeCompanyName}
+            value={EmployeeCompanyName}
           />
           <Text style={EmployersParticulars1.Txt894}>Address</Text>
           <TextInput
             style={styles.LongTextInput}
-            onChangeText={onChangeEmployeeAddress}
-            value={EmployeeAddress}
+            onChangeText={ChangeEmployeeCompanyAddress}
+            value={EmployeeCompanyAddress}
           />
           <Text style={EmployersParticulars1.Txt396}>Phone</Text>
           <TextInput
             style={styles.ShortTextInput}
-            onChangeText={onChangeEmployeePhone}
-            value={EmployeePhone}
+            onChangeText={ChangeEmployeeCompanyPhone}
+            value={EmployeeCompanyPhone}
           />
           <Text style={EmployersParticulars1.Txt748}>Employee Particulars</Text>
           <Text style={EmployersParticulars1.Txt894}>
@@ -986,13 +1070,13 @@ function EmployersParticulars1Load() {
           </Text>
           <TextInput
             style={styles.ShortTextInput}
-            onChangeText={onChangeEmployeeOccupation}
+            onChangeText={ChangeEmployeeOccupation}
             value={EmployeeOccupation}
           />
           <Text style={EmployersParticulars1.Txt894}>Date of Employment</Text>
           <TextInput
             style={styles.ShortTextInput}
-            onChangeText={onChangeEmployeeEmployment}
+            onChangeText={ChangeEmployeeEmployment}
             value={EmployeeEmployment}
           />
         </View>
@@ -1023,6 +1107,14 @@ function EmployersParticulars2Load() {
   const [EmployerEmail, onChangeEmployerEmail] = React.useState(
     "MichaelWang@gmail.com"
   );
+
+  global.EmployerName = EmployerName;
+
+  global.EmployerOccupation = EmployerOccupation;
+
+  global.EmployerNRIC = EmployerNRIC;
+  global.EmployerPhone = EmployerPhone;
+  global.EmployerEmail = EmployerEmail;
 
   return (
     <View style={EmployersParticulars2.CertifyingOfficerSDetails}>
@@ -1207,7 +1299,7 @@ function EmployersConfirmationLoad() {
           <View style={EmployersConfirmationStyle.Group3105}>
             <Text style={EmployersConfirmationStyle.Txt972}>Hours Upload</Text>
             <Text style={EmployersConfirmationStyle.Txt1039}>
-              Michael Wang_Wo....xls
+              {EmployerTimesheetName}
             </Text>
             <Image
               style={EmployersConfirmationStyle.Vector5}
@@ -1218,7 +1310,7 @@ function EmployersConfirmationLoad() {
           </View>
           <View style={EmployersConfirmationStyle.Group734}>
             <Text style={EmployersConfirmationStyle.Txt458}>CSN</Text>
-            <Text style={EmployersConfirmationStyle.Txt967}>123456</Text>
+            <Text style={EmployersConfirmationStyle.Txt967}>{EmployerCSN}</Text>
             <Image
               style={EmployersConfirmationStyle.Vector5}
               source={{
@@ -1232,18 +1324,20 @@ function EmployersConfirmationLoad() {
           <View style={EmployersConfirmationStyle.Group276}>
             <Text style={EmployersConfirmationStyle.Txt113}>Name</Text>
             <Text style={EmployersConfirmationStyle.Txt417}>
-              CAIFAN Engineering Pte. Ltd.
+              {EmployerEmployeeCompanyName}
             </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group878}>
             <Text style={EmployersConfirmationStyle.Txt162}>Address</Text>
             <Text style={EmployersConfirmationStyle.Txt417}>
-              5 Cai Fan Lane, Singapore 324533
+              {EmployerEmployeeCompanyAddress}
             </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group404}>
             <Text style={EmployersConfirmationStyle.Txt1040}>Phone</Text>
-            <Text style={EmployersConfirmationStyle.Txt417}>6570 3498</Text>
+            <Text style={EmployersConfirmationStyle.Txt417}>
+              {EmployerEmployeeCompanyPhone}
+            </Text>
           </View>
           <Text style={EmployersConfirmationStyle.Txt345}>
             Employee’s Particulars
@@ -1253,14 +1347,16 @@ function EmployersConfirmationLoad() {
               Occupation/ Designation
             </Text>
             <Text style={EmployersConfirmationStyle.Txt417}>
-              Principle Engineer
+              {EmployerEmployeeOccupation}
             </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group9110}>
             <Text style={EmployersConfirmationStyle.Txt568}>
               Date of Employment
             </Text>
-            <Text style={EmployersConfirmationStyle.Txt417}>12/07/2020</Text>
+            <Text style={EmployersConfirmationStyle.Txt417}>
+              {EmployerEmployeeDOE}
+            </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group493}>
             <Text style={EmployersConfirmationStyle.Txt288}>
@@ -1276,7 +1372,7 @@ function EmployersConfirmationLoad() {
           <View style={EmployersConfirmationStyle.Group276}>
             <Text style={EmployersConfirmationStyle.Txt492}>Name</Text>
             <Text style={EmployersConfirmationStyle.Txt417}>
-              Vanessa Lim Yi Ling
+              {EmployerName}
             </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group344}>
@@ -1284,23 +1380,27 @@ function EmployersConfirmationLoad() {
               Occupation/ Designation
             </Text>
             <Text style={EmployersConfirmationStyle.Txt417}>
-              Human Resource Assistant
+              {EmployerOccupation}
             </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group383}>
             <Text style={EmployersConfirmationStyle.Txt514}>
               NRIC/FIN/ Passport No.
             </Text>
-            <Text style={EmployersConfirmationStyle.Txt417}>AXXXX958A</Text>
+            <Text style={EmployersConfirmationStyle.Txt417}>
+              {EmployerNRIC}
+            </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group293}>
             <Text style={EmployersConfirmationStyle.Txt676}>Phone</Text>
-            <Text style={EmployersConfirmationStyle.Txt417}>6570 3254</Text>
+            <Text style={EmployersConfirmationStyle.Txt417}>
+              {EmployerPhone}
+            </Text>
           </View>
           <View style={EmployersConfirmationStyle.Group3831}>
             <Text style={EmployersConfirmationStyle.Txt492}>Email</Text>
             <Text style={EmployersConfirmationStyle.Txt417}>
-              vanessa.lyl@caifan.com.sg
+              {EmployerEmail}
             </Text>
           </View>
         </View>
